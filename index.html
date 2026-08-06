@@ -289,6 +289,7 @@
     }
     .icon-btn:hover { background: var(--bg-surface-alt); color: var(--text-base); }
     .icon-btn.delete:hover { background: rgba(239,68,68,0.1); color: var(--danger); }
+    .icon-btn.copy:hover { background: rgba(59,130,246,0.1); color: var(--primary); } /* NEU */
     .empty {
       display: none;
       flex-direction: column;
@@ -758,15 +759,6 @@
 
     const demoTools = [
       { id: '1', name: 'VHM-Bohrer Ø6,0 mm lang', category: 'VHM-Bohrer', status: 'verfügbar', icon: '🔩', image: '', link: '', diameter: '6.00', shank: '6.0', length: '57.0', flutes: '2', coating: 'TiAlN', material: 'VHM', manufacturer: 'Guhring', sku: '5511-6.000', magazine: 'T12', holder: 'HSK-A63', zLength: '142.50', coolant: 'Innenkühlung', machine: '', location: 'Schublade A1', notes: 'vc=120 m/min, fz=0.08 mm, für Stahl 1.4301' },
-      { id: '2', name: 'VHM-Fräser Ø10,0 mm 4-schneidig', category: 'VHM-Fräser', status: 'in Maschine', icon: '🌀', image: '', link: 'https://www.home.sandvik/coromant/de-de/products/Pages/R216.34-10030-AK22P.aspx', diameter: '10.00', shank: '10.0', length: '72.0', flutes: '4', coating: 'AlCrN', material: 'VHM', manufacturer: 'Sandvik Coromant', sku: 'R216.34-10030-AK22P', magazine: 'T05', holder: 'SK40', zLength: '165.00', coolant: 'Innen- & Außenkühlung', machine: 'DMG DMU 60 monoBLOCK', location: 'Maschine', notes: 'Trochoidales Fräsen, ap=0.3xD, ae=0.1xD' },
-      { id: '3', name: 'HSS-E Bohrer Ø8,5 mm DIN 338', category: 'Bohrer', status: 'verschlissen', icon: '🔩', image: '', link: '', diameter: '8.50', shank: '8.5', length: '117.0', flutes: '2', coating: 'TiN', material: 'HSS-E', manufacturer: 'Walter Titex', sku: 'A1179-8.5', magazine: '', holder: 'BT30', zLength: '130.00', coolant: 'Außenkühlung', machine: '', location: 'Schublade B2 (Ausschuss)', notes: 'Verschlissen – Nachschleifen nicht mehr wirtschaftlich' },
-      { id: '4', name: 'Gewindebohrer M8 x 1,25 HSS-E', category: 'Gewindebohrer', status: 'verfügbar', icon: '🔧', image: '', link: 'https://www.emuge.com', diameter: '8.00', shank: '6.3', length: '90.0', flutes: '3', coating: 'TiN', material: 'HSS-E', manufacturer: 'Emuge', sku: 'C0203100.0080', magazine: 'T18', holder: 'HSK-A63', zLength: '155.20', coolant: 'Innenkühlung', machine: '', location: 'Schublade C1', notes: 'Durchgangsloch, vc=8 m/min, Kühlmittel emulgiert' },
-      { id: '5', name: 'VHM-Schaftfräser Ø3,0 mm 2-schneidig', category: 'VHM-Fräser', status: 'nachgeschliffen', icon: '🌀', image: '', link: '', diameter: '3.00', shank: '3.0', length: '38.0', flutes: '2', coating: 'TiAlN', material: 'VHM', manufacturer: 'Kennametal', sku: 'HPC0300A', magazine: '', holder: 'HSK-E40', zLength: '98.75', coolant: 'Minimalmengenschmierung', machine: '', location: 'Schublade A3', notes: '1x nachgeschliffen, Durchmesser geprüft OK' },
-      { id: '6', name: 'Senker 90° Ø16,0 mm HSS', category: 'Senker', status: 'verfügbar', icon: '🔺', image: '', link: '', diameter: '16.00', shank: '10.0', length: '45.0', flutes: '3', coating: '—', material: 'HSS', manufacturer: 'Ruko', sku: '102160', magazine: 'T22', holder: 'SK40', zLength: '120.00', coolant: 'Außenkühlung', machine: '', location: 'Schublade D1', notes: 'Kegelsenker 90° für Senkschrauben' },
-      { id: '7', name: 'Reibahle Ø12H7 HSS', category: 'Reibahle', status: 'verfügbar', icon: '📐', image: '', link: '', diameter: '12.00', shank: '12.0', length: '95.0', flutes: '6', coating: 'TiN', material: 'HSS', manufacturer: 'Hoffmann Group', sku: '212120', magazine: '', holder: 'HSK-A63', zLength: '178.30', coolant: 'Innenkühlung', machine: '', location: 'Schublade E2', notes: 'Passungsreibahle H7, nur für Durchgangsbohrung' },
-      { id: '8', name: 'VHM-T-Nutenfräser Ø20,0 mm', category: 'T-Nutenfräser', status: 'neu', icon: '⊏', image: '', link: '', diameter: '20.00', shank: '20.0', length: '55.0', flutes: '4', coating: 'AlCrN', material: 'VHM', manufacturer: 'Walter', sku: 'MC726-20.0A4B', magazine: '', holder: 'BT40', zLength: '195.00', coolant: 'Innen- & Außenkühlung', machine: '', location: 'Originalverpackung – Regal CNC-Rechts', notes: 'Noch unbenutzt, für Nutenfräsung in Stahl' },
-      { id: '9', name: 'Gewindefräser M12 x 1,75 VHM', category: 'Gewindefräser', status: 'in Maschine', icon: '🔧', image: '', link: 'https://www.carmex.com', diameter: '12.00', shank: '12.0', length: '85.0', flutes: '3', coating: 'TiAlN', material: 'VHM', manufacturer: 'Carmex', sku: 'MT0600C6 1.75ISO', magazine: 'T09', holder: 'HSK-A63', zLength: '162.40', coolant: 'Innenkühlung', machine: 'Hermle C 400 U', location: 'Maschine', notes: 'Tangentialer Einstieg, vc=80 m/min' },
-      { id: '10', name: 'Einstechfräser Ø4,0 mm VHM', category: 'Einstechfräser', status: 'verfügbar', icon: '▬', image: '', link: '', diameter: '4.00', shank: '4.0', length: '50.0', flutes: '2', coating: 'TiAlN', material: 'VHM', manufacturer: 'Mitsubishi', sku: 'VPX200-0400', magazine: 'T15', holder: 'HSK-E32', zLength: '105.00', coolant: 'Trocken', machine: '', location: 'Schublade A2', notes: 'Für Nuten und Einstiche bis 4 mm Breite' }
     ];
 
     let tools = [];
@@ -1008,11 +1000,30 @@
             <span style="font-size:0.75rem; color:var(--text-muted);">${esc(tool.manufacturer || '—')}</span>
             <div class="card-actions">
               <button type="button" class="icon-btn" data-action="edit" data-id="${tool.id}" title="Bearbeiten">✏️</button>
+              <button type="button" class="icon-btn copy" data-action="copy" data-id="${tool.id}" title="Kopieren">📋</button>
               <button type="button" class="icon-btn delete" data-action="delete" data-id="${tool.id}" title="Löschen">🗑️</button>
             </div>
           </div>
         </div>`;
       }).join('');
+    }
+
+    // ==================== COPY TOOL (NEU) ====================
+    function copyTool(id) {
+      const original = tools.find(function(t) { return t.id === id; });
+      if (!original) return;
+      const clone = JSON.parse(JSON.stringify(original));
+      clone.id = generateId();
+      clone.name = clone.name + ' (Kopie)';
+      clone.status = 'neu';
+      clone.magazine = '';
+      clone.machine = '';
+      clone.location = '';
+      tools.push(clone);
+      saveTools();
+      renderStats();
+      renderGrid();
+      showToast('✅ Werkzeug kopiert: ' + clone.name, 'success');
     }
 
     // ==================== IMAGE UPLOAD ====================
@@ -1231,6 +1242,7 @@
       const id = btn.getAttribute('data-id');
       const action = btn.getAttribute('data-action');
       if (action === 'edit') { const tool = tools.find(function(t) { return t.id === id; }); if (tool) openModal(tool); }
+      else if (action === 'copy') { copyTool(id); } // NEU: Kopieren
       else if (action === 'delete') { deleteId = id; openDeleteModal(); }
     });
 
